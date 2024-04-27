@@ -44,8 +44,8 @@ CREATE TABLE friends_list (
     curr_status VARCHAR(255) NOT NULL
 );
 INSERT INTO friends_list(curr_user_id, other_user_id, curr_status) VALUES
-(1, 2, friends);
-(2, 1, friends);
+(1, 2, 'friends'),
+(2, 1, 'friends');
 
 DROP TABLE IF EXISTS wishlist;
 CREATE TABLE wishlist (
@@ -71,11 +71,11 @@ CREATE TABLE notifications (
     sender_name TEXT,
     msg_type TEXT,
     messages TEXT,
-    is_read BOOLEAN,
+    is_read BOOLEAN
 );
-INSERT INTO notifications(user_id, messages, sender_id, sender_name, msg_type, is_read, date_stamp, time_stamp) VALUES
-(1, '2023-03-21', '16:00:00', 2, 'Akira', 'purchase', 'An Item has been bought', false),
-(2, '2023-03-21', '16:00:00', 4, 'Naomi', 'purchase', 'An Item has been bought', false);
+INSERT INTO notifications(user_id, date_stamp, time_stamp, sender_id, sender_name, msg_type, messages, is_read) VALUES
+(1, '2024-03-21', '16:00:00', 2, 'Akira', 'purchase', 'An Item has been bought', false),
+(2, '2024-03-21', '16:00:00', 1, 'Naomi', 'purchase', 'An Item has been bought', false);
 
 DROP TABLE IF EXISTS events;
 CREATE TABLE events (
